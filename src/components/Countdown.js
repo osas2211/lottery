@@ -27,20 +27,22 @@ export const Countdown = ()=>{
         <>  
             <h4 className="center mt-5">Ticket sale ends in: </h4>
             <div className="countdown-timer">
-                <div className="hr">
-                    <h3>{(hour_ < 10) ? "0" + hour_: hour_}</h3>
-                    <small>Hr</small>
-                </div>
-                <p>:</p>
-                <div className="min">
-                    <h3>{(minute_ < 10) ? "0" + minute_: minute_}</h3>
-                    <small>Min</small>
-                </div>
-                <p>:</p>
-                <div className="sec">
-                    <h3>{(second_ < 10) ? "0" + second_: second_}</h3>
-                    <small>Sec</small>
-                </div>
+                {hour_ < 0 ? "Ticket Sell has ended" : <>
+                    <div className="hr">
+                        <h3>{(hour_ < 10) ? "0" + hour_: hour_}</h3>
+                        <small>Hr</small>
+                    </div>
+                    <p>:</p>
+                    <div className="min">
+                        <h3>{(minute_ < 10) ? "0" + minute_: minute_}</h3>
+                        <small>Min</small>
+                    </div>
+                    <p>:</p>
+                    <div className="sec">
+                        <h3>{(second_ < 10) ? "0" + second_: second_}</h3>
+                        <small>Sec</small>
+                    </div>
+                </>}
             </div>
         </>
     )
