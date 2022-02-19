@@ -1,5 +1,8 @@
-const MainNav = () =>{
+import React, { useState } from "react";
+import { ConnectWallet, disconnectWallet } from "../api/metamask";
 
+
+const MainNav = () =>{
     return (
         <ul className="main-nav">
             <li className="nav-item"><a href="/" >Home</a></li>
