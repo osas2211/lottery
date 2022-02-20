@@ -7,10 +7,10 @@ const Header = (props) => {
         <header className="main-header">
             {/* <h2 className="logo">LOG<span>o</span></h2> */}
             <div className="logo">
-                <img src={polyLotto}/>
+                <img src={polyLotto} alt="logo"/>
             </div>
             <MainNav />
-            <HamCloseBtn hider_={props.hide_}/>
+            {/* <HamCloseBtn hider_={props.hide_}/> */}
         </header>
     )
 }

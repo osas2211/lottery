@@ -74,7 +74,7 @@ const TicketSection = (props) => {
                         </form>
                         
                         <OrderSummary type={props.title} amount={props.amount} num={numTicket} hide={onShow} tModal={toggleModal}/>
-                        <a href="#ticket-history" className="btn-2">Show Transaction History</a>
+                        {/* <a href="#ticket-history" className="btn-2">Show Transaction History</a> */}
                     </div>
                     
                 </div>
@@ -83,7 +83,7 @@ const TicketSection = (props) => {
                 </div>
             </div>
             
-            <TranscHistory id_="ticket-history" update={transList}/>
+            {/* <TranscHistory id_="ticket-history" update={transList}/> */}
             
         </>
     )
