@@ -2,7 +2,7 @@ import TranscHistory from "./TransactionHistory";
 import { useState } from "react";
 import { OrderSummary } from "./OrderSummary";
 import { Countdown } from "./Countdown";
-import card_img2 from "../images/Bitcoin.svg";
+import card_img2 from "../images/SVG Polylogo-02.svg";
 
 const TicketSection = (props) => {
     const transactions = []
