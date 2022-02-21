@@ -1,5 +1,4 @@
 import card_img from "../images/cards.svg";
-import card_img2 from "../images/Investment.svg";
 
 const WelcomeContent = () => {
     return (
@@ -8,7 +7,7 @@ const WelcomeContent = () => {
                 <div className="welcome">
                     <p>new crypto game</p>
                     <h2>play to win</h2>
-                    <p className="text-muted">Play, Invest, Exchange and join the contest with high rewards at "Company Name"</p>
+                    <p className="text-muted">Play, Invest, Exchange and join the contest with high rewards at Poly Lotto.</p>
                     <a href="#play" className="btn">Get Started Now</a>
                 </div>
                 <div className="welcome-img">

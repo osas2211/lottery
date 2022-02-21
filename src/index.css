@@ -216,8 +216,12 @@ form input{
 .nav-options ul li a, .nav-options ul li p, hr{
     display: block;
     margin-bottom: 1rem;
-    color: #080f1d;
+    color: var(--bg-color);
     font-size: 1.2rem;
+}
+
+.nav-options ul li a:hover, .nav-options ul li p:hover{
+    color: var(--main-color);
 }
 
 .disconnect{
@@ -287,7 +291,7 @@ form input{
 
 .bottom-section{
     background-color: var(--bg-color3);
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
 }
 
 
@@ -399,8 +403,8 @@ form input{
 }
 
 .ticket-img{
-    width: 43rem;
-    margin-right: 1rem;
+    width: 50rem;
+    margin-top: -5rem;
     margin-right: 5rem;
 }
 
@@ -521,6 +525,43 @@ thead{
     
 }
 
+.main-footer{
+    background-color: var(--bg-color);
+    padding: 3rem 0;
+}
+
+.main-footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.main-footer small{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.main-footer li{
+    margin-bottom: 1rem;
+}
+
+.main-footer a{
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.main-footer a:hover{
+    text-decoration: underline;
+}
+
+.main-footer .logo{
+    margin-left: 0;
+}
 
 @media (max-width: 1000px) {
 
@@ -547,6 +588,10 @@ thead{
     
     .ticket-content{
         width: 70%;
+    }
+
+    .ticket-img{
+        margin-top: 0;
     }
     
 
@@ -588,6 +633,7 @@ thead{
         width: 23rem;
     }
 
+
     .cards{
         flex-direction: column;
         justify-content: center;
@@ -607,6 +653,12 @@ thead{
         margin-bottom: 0;
     }
 
+    .main-footer .container{
+        flex-direction: column;
+    }
+    .main-footer div {
+        margin-bottom: 2rem;
+    }
 
     
 }

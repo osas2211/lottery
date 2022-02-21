@@ -4,7 +4,7 @@ const BottomSection = () => {
     return (
         <div className="bottom-section">
             <div className="container">
-            <Cards />
+                <Cards />
             </div>
         </div>
     )

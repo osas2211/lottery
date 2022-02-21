@@ -1,25 +1,18 @@
 import Header from "./components/Header";
-import MobileNav from "./components/MobileNav";
 import WelcomeContent from "./components/Welcome";
 import BottomSection from "./components/BottomSection";
 import TicketSection from "./components/TickectSection";
 import ComingSoon  from "./components/ComingSoon";
+import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useState } from "react";
 
 function App() {
-  const [mobileNav, setMobileNav] = useState("hide-nav");
-  const hideNav = (val)=>{
-    console.log(val)
-    setMobileNav(val)
-  }
 
   return (
     <Router>
       <div className="App">
         <div className="bg-1">
-        <Header hide_={hideNav}/>
-        <MobileNav hide={mobileNav} />
+        <Header/>
         </div>
         <Switch>
           <Route exact path = "/">
@@ -34,7 +27,7 @@ function App() {
           </Route>
 
           <Route path="/investor">
-            <TicketSection title="Investor" amount = {10} lotteryCategory ={1}/>
+            <TicketSection title="Investor" amount = {10} lotteryCategory = {1}/>
           </Route>
 
           <Route path="/whale">
@@ -45,6 +38,7 @@ function App() {
             <ComingSoon />
           </Route>
         </Switch>
+        <Footer></Footer>
     </div>
     </Router>
   );
