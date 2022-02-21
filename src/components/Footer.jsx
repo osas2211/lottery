@@ -1,6 +1,5 @@
 import polyLotto from "../images/polylotto-logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fab } from '@fortawesome/free-brands-svg-icons'
 export const Footer = ()=>{
 
     return (
@@ -34,7 +33,6 @@ export const Footer = ()=>{
                 </div>
                 <div className="logo">
                     <img alt="" src={polyLotto}/>
-                    <FontAwesomeIcon icon="fab fa-github" />
                 </div>
             </div>
         </footer>
