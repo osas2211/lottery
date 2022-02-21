@@ -8,20 +8,27 @@ import { ConnectWallet, disconnectWallet } from "../api/metamask";
 
 
 const MainNav = () =>{
-    const [state, setState] = useState(true)
-    const [navOptionsState, setNavOptionsState] = useState(true)
+    const [connectState, setConnectState] = useState(false)
+    const [navOptionsState, setNavOptionsState] = useState(false)
     const toggleConnect = (e)=>{
         e.preventDefault();
-        setState(false)
+        // sets connection status to "CONNECTED", connectState is set to True.
+        setConnectState(true)
     }
     const toggleNavOption = (e)=>{
         e.preventDefault();
-        navOptionsState ? setNavOptionsState(false) : setNavOptionsState(true)
+
+        // toggles Nav dropDown. "ON(true) or OFF(false)"
+        !navOptionsState ? setNavOptionsState(true) : setNavOptionsState(false)
     }
     const disconnect = (e)=>{
         e.preventDefault();
-        setNavOptionsState(true)
-        setState(true)
+
+        //  sets The "Connected Status" to "Disconnected". DUMMY_LOGIC: Nav dropdown and connect state
+        //  is set to false. 
+
+        setNavOptionsState(false)
+        setConnectState(false)
     }
     return (
         <>
@@ -31,7 +38,7 @@ const MainNav = () =>{
                         <img src={home} className="home"alt="home icon"/>
                     </a>
                 </li>
-                {state ? <li><a href="" className="btn-3" onClick={toggleConnect}>Connect</a></li> : 
+                {!connectState ? <li><a href="" className="btn-3" onClick={toggleConnect}>Connect</a></li> : 
                     <li  className="wallet-nav">
                         <div className="wallet"><img src={wallet} alt="wallet"/></div>
                         <a href="/" onClick={toggleNavOption}>
@@ -41,7 +48,7 @@ const MainNav = () =>{
                 }
             </ul>
             {
-                navOptionsState ? <></> : createPortal(
+                !navOptionsState ? <></> : createPortal(
                     <div className="nav-options">
                         <ul>
                             <li><a href="#">Wallet</a></li>
