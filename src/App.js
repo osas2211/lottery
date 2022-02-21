@@ -30,15 +30,15 @@ function App() {
           </Route>
 
           <Route path="/basic">
-            <TicketSection title="Basic" amount = {1}/>
+            <TicketSection title="Basic" amount = {1} lotteryCategory = {0}/>
           </Route>
 
           <Route path="/investor">
-            <TicketSection title="Investor" amount = {10}/>
+            <TicketSection title="Investor" amount = {10} lotteryCategory ={1}/>
           </Route>
 
           <Route path="/whale">
-            <TicketSection title="Whale" amount = {100}/>
+            <TicketSection title="Whale" amount = {100} lotteryCategory = {2}/>
           </Route>
 
           <Route path="/coming">

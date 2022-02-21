@@ -14,7 +14,7 @@ export const Countdown = ()=>{
         const second = 1000;
         const minute = second * 60;
         const hour = minute * 60;
-        const day = hour * 24;
+        //const day = hour * 24;
         //setDay(()=> Math.floor(gap/day));
         setHour(()=> Math.floor((gap / hour)));
         setMinute(() => Math.floor((gap % hour) / minute));

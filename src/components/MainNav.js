@@ -4,6 +4,8 @@ import down from "../images/down.svg";
 import logout from "../images/logout.svg";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { ConnectWallet, disconnectWallet } from "../api/metamask";
+
 
 const MainNav = () =>{
     const [state, setState] = useState(true)
