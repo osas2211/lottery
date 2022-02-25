@@ -563,6 +563,16 @@ thead{
     margin-left: 0;
 }
 
+.main-footer hr{
+    width: 90%;
+    margin: 2rem auto;
+    opacity: 0.2;
+}
+
+.main-footer .buy-token{
+    justify-content: end;
+}
+
 @media (max-width: 1000px) {
 
     .logo{

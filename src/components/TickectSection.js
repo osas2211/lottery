@@ -1,4 +1,3 @@
-import TranscHistory from "./TransactionHistory";
 import { useState } from "react";
 import { OrderSummary } from "./OrderSummary";
 import { Countdown } from "./Countdown";
@@ -70,11 +69,10 @@ const TicketSection = (props) => {
 
                         <form action="" onSubmit={ticketFormHandler}>
                             <input type="number" min={1} placeholder="Number of Tickets" onChange={handleTicketVal} value={ticketVal}/>
-                            <a href="" className={"btn "} onClick={getTicket}>Get Ticket</a>
+                            <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
                         </form>
                         
                         <OrderSummary type={props.title} amount={props.amount} num={numTicket} hide={onShow} tModal={toggleModal}/>
-                        {/* <a href="#ticket-history" className="btn-2">Show Transaction History</a> */}
                     </div>
                     
                 </div>

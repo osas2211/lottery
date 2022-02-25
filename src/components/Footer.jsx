@@ -35,6 +35,10 @@ export const Footer = ()=>{
                     <img alt="" src={polyLotto}/>
                 </div>
             </div>
+            <hr />
+            <div className="container buy-token">
+                <a href="/coming" className="btn-3">Buy Token &#8594;</a>
+            </div>
         </footer>
     )
 }

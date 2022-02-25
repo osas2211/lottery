@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const StyledModal = styled.div`
     display: ${props => props.display};
     position: absolute;
-    top: 2rem;
+    top: 4rem;
     left: 50%;
     transform: translateX(-50%);
-    height: 30rem;
-    width: 25rem;
+    height: 31rem;
+    width: 26rem;
     background-color: #183363;
     padding: 2rem;
     z-index: 10;
@@ -38,6 +38,7 @@ export const StyledModal = styled.div`
     .flex{
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     .close-btn{

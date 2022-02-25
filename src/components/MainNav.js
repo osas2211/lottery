@@ -56,7 +56,7 @@ const MainNav = () =>{
                             <hr />
                             <li className="disconnect">
                                 <p>Disconnect</p>
-                                <a href="#" onClick={disconnect}><img src={logout} alt="disconnect"></img></a>
+                                <a href="#" onClick={disconnect}><img src={logout} alt="disconnect" /></a>
                             </li>
                         </ul>
                     </div>, document.querySelector("body")
