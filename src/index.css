@@ -448,26 +448,7 @@ form input{
     text-transform: uppercase;
     word-spacing: 8px;
 }
-table{
-    border-collapse: separate;
-}
-td, th{
-    padding: 0.5rem;
-    border: 1px solid var(--bg-color2);
-}
-td{
-    color: var(--bg-color);
-}
-td a{
-    color: var(--main-color);
-    text-decoration: underline var(--main-color);
-}
-th{
-    text-transform: uppercase;
-}
-thead{
-    background-color: var(--bg-color2);
-}
+
 
 .countdown-timer{
     margin-left: 1.5rem;

@@ -4,12 +4,20 @@ import down from "../images/down.svg";
 import logout from "../images/logout.svg";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import TranscHistory from "./TransactionHistory";
+import "../transactions.css"
 import { ConnectWallet, disconnectWallet } from "../api/metamask";
 
 
 const MainNav = () =>{
-    const [connectState, setConnectState] = useState(false)
-    const [navOptionsState, setNavOptionsState] = useState(false)
+    const [connectState, setConnectState] = useState(false);
+    const [navOptionsState, setNavOptionsState] = useState(false);
+    const [transcState, setTranscState] = useState(false);
+
+    const toggleTransactionHistory = ()=>{
+        transcState ? setTranscState(false) : setTranscState(true);
+    }
+
     const toggleConnect = (e)=>{
         e.preventDefault();
         // sets connection status to "CONNECTED", connectState is set to True.
@@ -52,7 +60,7 @@ const MainNav = () =>{
                     <div className="nav-options">
                         <ul>
                             <li><a href="#">Wallet</a></li>
-                            <li><a href="#">Recent Transactions</a></li>
+                            <li><a href="#" onClick={toggleTransactionHistory}>Recent Transactions</a></li>
                             <hr />
                             <li className="disconnect">
                                 <p>Disconnect</p>
@@ -61,6 +69,10 @@ const MainNav = () =>{
                         </ul>
                     </div>, document.querySelector("body")
                 )
+            }
+
+            {
+                transcState ? <TranscHistory setTranscState={setTranscState}/> : <></>
             }
         </>
     )

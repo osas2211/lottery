@@ -4,50 +4,22 @@ import { Countdown } from "./Countdown";
 import card_img2 from "../images/SVG Polylogo-02.svg";
 
 const TicketSection = (props) => {
-    const transactions = []
     const [numTicket, setNumTicket] = useState(()=> 1);
-    const [transList, setTransList] = useState(transactions);
-    const [onShow, setOnShow] = useState(()=>"close");
+    const [onShow, setOnShow] = useState(false);
     const [ticketVal, setTicketVal] = useState(()=> "")
-
-    const toggleModal = (val)=>{
-        setOnShow(()=>val)
-    }
 
     const getTicket = (e)=>{
         e.preventDefault();
         if (e.target.previousSibling.value > 0){
+            // "e.target.previousSibling.value" is the Value from the input element just behind the button.
+
             setNumTicket(()=>Math.floor(e.target.previousSibling.value))
             setTicketVal(()=>Math.floor(e.target.previousSibling.value))
         }
         else{
-            
             setNumTicket(()=> 0)
         }
-        if (onShow == "close"){
-            setOnShow(()=>"open")
-        }
-        else if (onShow == "open"){
-            setOnShow(()=>"close")
-        }
-        if (Number(e.target.previousSibling.value) > 0 ){
-            const trans = {id:Math.random(1076).toString().slice(2,10), 
-                date: (new Date).toDateString(),
-                address:"0x39c5f4439db7f9569918",
-                ticket_num : 5,
-                ticket_type : props.title,
-            }
-            setTransList((prevState)=>{
-                return [trans, ...prevState]
-            })
-            setTicketVal(()=> "")
-        }
-        else{
-            setOnShow(()=>"close")
-            setTransList(prevState => [...prevState] )
-        }
-        
-
+        setOnShow(true)
     }
 
     const ticketFormHandler = (e)=>{
@@ -72,7 +44,7 @@ const TicketSection = (props) => {
                             <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
                         </form>
                         
-                        <OrderSummary type={props.title} amount={props.amount} num={numTicket} hide={onShow} tModal={toggleModal}/>
+                        {onShow ? <OrderSummary type={props.title} amount={props.amount} num={numTicket} setOnShow={setOnShow}/> : <></>}
                     </div>
                     
                 </div>
@@ -80,8 +52,6 @@ const TicketSection = (props) => {
                     <img src={card_img2} alt="" />
                 </div>
             </div>
-            
-            {/* <TranscHistory id_="ticket-history" update={transList}/> */}
             
         </>
     )
