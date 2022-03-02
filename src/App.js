@@ -5,6 +5,7 @@ import TicketSection from "./components/TickectSection";
 import ComingSoon  from "./components/ComingSoon";
 import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { TimerProvider } from "./context/TicketTimerContext";
 
 function App() {
 
@@ -22,17 +23,19 @@ function App() {
             </div>
           </Route>
 
-          <Route path="/basic">
-            <TicketSection title="Basic" amount = {1} lotteryCategory = {0}/>
-          </Route>
+          <TimerProvider>
+            <Route path="/basic">
+              <TicketSection title="Basic" amount = {1} lotteryCategory = {0}/>
+            </Route>
 
-          <Route path="/investor">
-            <TicketSection title="Investor" amount = {10} lotteryCategory = {1}/>
-          </Route>
+            <Route path="/investor">
+              <TicketSection title="Investor" amount = {10} lotteryCategory = {1}/>
+            </Route>
 
-          <Route path="/whale">
-            <TicketSection title="Whale" amount = {100} lotteryCategory = {2}/>
-          </Route>
+            <Route path="/whale">
+              <TicketSection title="Whale" amount = {100} lotteryCategory = {2}/>
+            </Route>
+          </TimerProvider>
 
           <Route path="/coming">
             <ComingSoon />

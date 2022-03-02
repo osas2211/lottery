@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { OrderSummary } from "./OrderSummary";
-import { Countdown } from "./Countdown";
+import { Countdown, CountdownEnding } from "./Countdown";
 import card_img2 from "../images/SVG Polylogo-02.svg";
+import { TimerContext } from "../context/TicketTimerContext";
+import { CountdownStating } from "./CountdownStarting";
 
 const TicketSection = (props) => {
+    const [hour] = useContext(TimerContext)
     const [numTicket, setNumTicket] = useState(()=> 1);
     const [onShow, setOnShow] = useState(false);
     const [ticketVal, setTicketVal] = useState(()=> "")
@@ -31,29 +34,29 @@ const TicketSection = (props) => {
     }
     
     return(
-        <>
-            <div className="ticket-section">
-                <div className="ticket-content">
-                    <Countdown></Countdown>
-                    <div className="ticket container">
-                        <p className="ticket-type">{props.title} ${props.amount}</p>
-                        <p className="randomizer"><span>Buy {props.title} Ticket(s)</span></p>
+        
+        <div className="ticket-section">
+            <div className="ticket-content">
+            <h4 className="center mt-5">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
+                <CountdownEnding></CountdownEnding>
+                {hour > 0 ? <div className="ticket container">
+                    <p className="ticket-type">{props.title} ${props.amount}</p>
+                    <p className="randomizer"><span>Buy {props.title} Ticket(s)</span></p>
 
-                        <form action="" onSubmit={ticketFormHandler}>
-                            <input type="number" min={1} placeholder="Number of Tickets" onChange={handleTicketVal} value={ticketVal}/>
-                            <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
-                        </form>
-                        
-                        {onShow ? <OrderSummary type={props.title} amount={props.amount} num={numTicket} setOnShow={setOnShow}/> : <></>}
-                    </div>
+                    <form action="" onSubmit={ticketFormHandler}>
+                        <input type="number" min={1} placeholder="Number of Tickets" onChange={handleTicketVal} value={ticketVal}/>
+                        <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
+                    </form>
                     
-                </div>
-                <div  className="ticket-img">
-                    <img src={card_img2} alt="" />
-                </div>
+                    {onShow ? <OrderSummary type={props.title} amount={props.amount} num={numTicket} setOnShow={setOnShow}/> : <></>}
+                </div> : <CountdownStating></CountdownStating>}
+                
             </div>
-            
-        </>
+            <div  className="ticket-img">
+                <img src={card_img2} alt="" />
+            </div>
+        </div>
+
     )
 }
 export default TicketSection;
