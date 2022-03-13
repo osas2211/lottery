@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { OrderSummary } from "./OrderSummary";
-import { Countdown, CountdownEnding } from "./Countdown";
+import { CountdownEnding } from "./CountdownEnding";
 import card_img2 from "../images/SVG Polylogo-02.svg";
 import { TimerContext } from "../context/TicketTimerContext";
 import { CountdownStating } from "./CountdownStarting";
 
 const TicketSection = (props) => {
-    const [hour] = useContext(TimerContext)
+    const [hour, minute, second] = useContext(TimerContext)
     const [numTicket, setNumTicket] = useState(()=> 1);
     const [onShow, setOnShow] = useState(false);
     const [ticketVal, setTicketVal] = useState(()=> "")
@@ -39,7 +39,7 @@ const TicketSection = (props) => {
             <div className="ticket-content">
             <h4 className="center mt-5">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
                 <CountdownEnding></CountdownEnding>
-                {hour > 0 ? <div className="ticket container">
+                {hour > 0 || minute > 0 || second > 0 ? <div className="ticket container">
                     <p className="ticket-type">{props.title} ${props.amount}</p>
                     <p className="randomizer"><span>Buy {props.title} Ticket(s)</span></p>
 
