@@ -13,7 +13,7 @@ span[data-toolTip]::before{
     content: attr(data-toolTip);
     position: absolute;
     top: -5rem;
-    left: -12rem;
+    left: -9rem;
     z-index: 50;
     padding: 0.5rem;
     color: rgb(255, 255, 255, 1);
@@ -73,13 +73,13 @@ input[type="checkbox"].allowance-checkbox + label::before{
     height: 2rem;
     width: 5rem;
     border-radius: 2px;
-    background-color: rgb(189, 179, 179);
+    background-color: rgba(189, 179, 179, 0.568);
     transition: 200ms ease-in-out;
     color: #fff;
 }
 
 input[type="checkbox"].allowance-checkbox:checked + label::before{
-    content: "\f534";
+    content: "\f13e";
     text-align: start;
     padding-top: 0.4rem;
     padding-left: 0.5rem;
@@ -96,13 +96,13 @@ input[type="checkbox"].allowance-checkbox + label::after{
     height: 2.1rem;
     width: 2.8rem;
     border-radius: 2px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.712);
+    box-shadow: 0px 0px 20px rgba(36, 35, 35, 0.322);
     transition: 200ms ease-in-out;
 }
 
 input[type="checkbox"].allowance-checkbox:checked + label::after{
     left: 2.2rem;
     background-color: #66ff99;
-    box-shadow: 0px 0px 20px #62e68ebb;
+    box-shadow: 0px 0px 20px #0b160f7a;
 }

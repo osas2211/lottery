@@ -1,6 +1,7 @@
 import { StyledModal } from "../StyledComponents/Modal.styled";
 import { useState } from "react";
 import reactDom from "react-dom";
+import { Link } from "react-router-dom"
 import "../switch.css"
 
 export const OrderSummary = (props)=>{
@@ -43,7 +44,7 @@ export const OrderSummary = (props)=>{
 
           <div className="flex"><h4>Total Amount</h4><h4>${props.amount*props.num}</h4></div>
         </div>
-        <div className="mt-5"><a href="/coming" className="btn" onClick={handlePay}>{pay}</a></div>
+        <div className="mt-5"><Link to="/coming" className="btn" onClick={handlePay}>{pay}</Link></div>
       </StyledModal>
       </div>, document.querySelector("body")
     )
