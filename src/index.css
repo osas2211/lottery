@@ -46,7 +46,7 @@ body{
     width: 100vw;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6, .btn-3, .nav-options a, .nav-options .disconnect p{
     font-family: "Fugaz One",Arial, Helvetica, sans-serif;
 }
 
@@ -170,6 +170,11 @@ form input{
     border-bottom: 1px solid var(--main-color);
     position: relative;
     z-index: 10;
+}
+
+.fa-home{
+    font-size: 2rem;
+    color: var(--main-color);
 }
 
 .main-nav{

@@ -4,6 +4,7 @@ import down from "../images/down.svg";
 import logout from "../images/logout.svg";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 import TranscHistory from "./TransactionHistory";
 import "../transactions.css"
 import { ConnectWallet, disconnectWallet } from "../api/metamask";
@@ -42,9 +43,10 @@ const MainNav = () =>{
         <>
             <ul className="main-nav">
                 <li className="nav-item">
-                    <a href="/">
-                        <img src={home} className="home"alt="home icon"/>
-                    </a>
+                    <Link to="/">
+                        {/* <img src={home} className="home"alt="home icon"/> */}
+                        <i className="fas fa-home"></i>
+                    </Link>
                 </li>
                 {!connectState ? <li><a href="" className="btn-3" onClick={toggleConnect}>Connect</a></li> : 
                     <li  className="wallet-nav">
