@@ -41,6 +41,7 @@ body{
     
 }
 
+
 .centering{
     position: relative;
     width: 100vw;
@@ -165,7 +166,7 @@ form input{
     background-color: var(--bg-color2);
     text-transform: uppercase;
     width: 100%;
-    padding: 0.8rem 2rem;
+    padding: 0.5rem 2rem;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 4% 100%);
     border-bottom: 1px solid var(--main-color);
     position: relative;
@@ -198,8 +199,8 @@ form input{
     display: flex;
     align-items: center;
     background-color: var(--bg-color);
-    margin-left: 2rem;
-    padding: 0.5rem 2rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 25px;
     box-shadow: 1px 4px 8px #080f1d;
     transition: all .3s ease-in-out;
@@ -654,6 +655,59 @@ form input{
     }
     .main-footer div {
         margin-bottom: 2rem;
+    }
+
+    
+}
+
+@media (max-width: 400px) {
+
+    *{
+        font-size: 0.8rem;
+    }
+    .welcome h2{
+        font-size: 2rem;
+    }
+    .fa-home{
+        font-size: 1rem;
+        color: var(--main-color);
+    }
+    
+    .main-nav{
+        width: auto;
+    }
+    .main-nav .home{
+        width: 1.5rem;
+    }
+    .main-nav .wallet{
+        width: 1.2rem;
+        margin-right: 0.5rem;
+    }
+    
+    
+    .main-nav .down{
+        width: 1.2rem;
+        
+    }
+
+    .wallet-nav{
+        display: flex;
+        align-items: center;
+        background-color: var(--bg-color);
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        box-shadow: 1px 4px 8px #080f1d;
+        transition: all .3s ease-in-out;
+    
+    }
+
+    .btn-3{
+        
+    }
+
+    .nav-options ul li a, .nav-options ul li p, hr{
+        font-size: 0.9rem;
     }
 
     

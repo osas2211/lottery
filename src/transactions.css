@@ -47,9 +47,26 @@ tr, tbody td{
 
 @media (max-width: 700px) {
     .transactions{
+        font-size: 0.9rem;
         right: 0;
-        transform: translateX(-10%);
-        width: 25rem;
+        top: 0;
+        width: 90%;
+        transform: translate(-5%, 30%);
         height: 20rem;
+        margin: auto;
+    }
+    th{
+        font-size: 0.7rem;
+    }
+    td{
+        font-size: 0.7rem;
+    }
+
+
+}
+
+@media (max-width: 400px){
+    .transactions p{
+        font-size: 2.5rem;
     }
 }
