@@ -36,7 +36,11 @@ const TicketSection = (props) => {
     return(
         
         <div className="ticket-section">
+            <div  className="ticket-img">
+                    <img src={card_img2} alt="" />
+                </div>
             <div className="ticket-content">
+                
             <h4 className="center mt-5">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
                 <CountdownEnding></CountdownEnding>
                 {hour > 0 || minute > 0 || second > 0 ? <div className="ticket container">
@@ -52,9 +56,9 @@ const TicketSection = (props) => {
                 </div> : <CountdownStating></CountdownStating>}
                 
             </div>
-            <div  className="ticket-img">
+            {/* <div  className="ticket-img">
                 <img src={card_img2} alt="" />
-            </div>
+            </div> */}
         </div>
 
     )
