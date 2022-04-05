@@ -41,7 +41,7 @@ const TicketSection = (props) => {
                 </div>
             <div className="ticket-content">
                 
-            <h4 className="center mt-5">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
+            <h4 className="center">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
                 <CountdownEnding></CountdownEnding>
                 {hour > 0 || minute > 0 || second > 0 ? <div className="ticket container">
                     <p className="ticket-type">{props.title} ${props.amount}</p>

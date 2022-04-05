@@ -204,6 +204,7 @@ form input{
     border-radius: 25px;
     box-shadow: 1px 4px 8px #080f1d;
     transition: all .3s ease-in-out;
+    z-index: 10;
 
 }
 
@@ -216,6 +217,7 @@ form input{
     padding: 2rem;
     transition: all .7s ease-in-out;
     box-shadow: 2px 8px 15px rgba(11, 21, 41, 0.459);
+    z-index: 10;
     
 }
 
@@ -392,6 +394,10 @@ form input{
     align-items: center;
     position: relative;
     overflow: hidden;
+}
+
+.ticket-section .center{
+    color: var(--bg-color);
 }
 .ticket-content{
     margin: 0rem auto;
@@ -627,12 +633,25 @@ form input{
         top: 0;
     }
 
+    .ticket-type{
+        font-size: 1.4rem;
+    }
+
+    .countdown-timer{
+        width: fit-content;
+    }
+    .countdown-timer h3, .countdown-timer p{
+        font-size: 1.5rem;
+    }
+
     .welcome-img{
         margin-top: 2rem;
         width: 23rem;
     }
 
-
+    form input{
+        width: 9rem;
+    }
     .cards{
         flex-direction: column;
         justify-content: center;
