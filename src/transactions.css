@@ -1,7 +1,8 @@
 .transactions{
     position: absolute;
     top: 6rem;
-    right: 8rem;
+    right: 0rem;
+    transform: translateX(-50%);
     height: 16.5rem;
     overflow-y: scroll;
     padding: 1rem 1rem 2rem 1rem;

@@ -2,7 +2,7 @@ import home from "../images/home.svg";
 import wallet from "../images/wallet.svg";
 import down from "../images/down.svg";
 import logout from "../images/logout.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import TranscHistory from "./TransactionHistory";
@@ -39,6 +39,12 @@ const MainNav = () =>{
         setNavOptionsState(false)
         setConnectState(false)
     }
+
+    useEffect(()=>{
+        document.querySelector(".App").addEventListener(("click"), ()=>{
+            setNavOptionsState(false)
+        })
+    }, [])
     return (
         <>
             <ul className="main-nav">

@@ -4,6 +4,7 @@ import { CountdownEnding } from "./CountdownEnding";
 import card_img2 from "../images/SVG Polylogo-02.svg";
 import { TimerContext } from "../context/TicketTimerContext";
 import { CountdownStating } from "./CountdownStarting";
+import PrizePot from "./PrizePot";
 
 const TicketSection = (props) => {
     const [hour, minute, second] = useContext(TimerContext)
@@ -34,33 +35,34 @@ const TicketSection = (props) => {
     }
     
     return(
-        
-        <div className="ticket-section">
-            <div  className="ticket-img">
-                    <img src={card_img2} alt="" />
-                </div>
-            <div className="ticket-content">
-                
-            <h4 className="center">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
-                <CountdownEnding></CountdownEnding>
-                {hour > 0 || minute > 0 || second > 0 ? <div className="ticket container">
-                    <p className="ticket-type">{props.title} ${props.amount}</p>
-                    <p className="randomizer"><span>Buy {props.title} Ticket(s)</span></p>
-
-                    <form action="" onSubmit={ticketFormHandler}>
-                        <input type="number" min={1} placeholder="Number of Tickets" onChange={handleTicketVal} value={ticketVal}/>
-                        <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
-                    </form>
+        <>
+            <div className="ticket-section">
+                <div  className="ticket-img">
+                        <img src={card_img2} alt="" />
+                    </div>
+                <div className="ticket-content">
                     
-                    {onShow ? <OrderSummary type={props.title} amount={props.amount} num={numTicket} setOnShow={setOnShow}/> : <></>}
-                </div> : <CountdownStating></CountdownStating>}
-                
-            </div>
-            {/* <div  className="ticket-img">
-                <img src={card_img2} alt="" />
-            </div> */}
-        </div>
+                <h4 className="center">{hour < 0 ? "" : "Ticket sale ends in: "}</h4>
+                    <CountdownEnding></CountdownEnding>
+                    {hour > 0 || minute > 0 || second > 0 ? <div className="ticket container">
+                        <p className="ticket-type">{props.title} ${props.amount}</p>
+                        <p className="randomizer"><span>Buy {props.title} Ticket(s)</span></p>
 
+                        <form action="" onSubmit={ticketFormHandler}>
+                            <input type="number" min={1} placeholder="Number of Tickets" onChange={handleTicketVal} value={ticketVal}/>
+                            <a href="" className={"btn"} onClick={getTicket}>Get Ticket</a>
+                        </form>
+                        
+                        {onShow ? <OrderSummary type={props.title} amount={props.amount} num={numTicket} setOnShow={setOnShow}/> : <></>}
+                    </div> : <CountdownStating></CountdownStating>}
+                    
+                </div>
+                {/* <div  className="ticket-img">
+                    <img src={card_img2} alt="" />
+                </div> */}
+            </div>
+            <PrizePot />
+        </>
     )
 }
 export default TicketSection;
