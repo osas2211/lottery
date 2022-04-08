@@ -169,4 +169,12 @@
     .winning-category{
         grid-template-columns: 1fr;
     }
+
+    .prizepot{
+        width: 95%;
+    }
+
+    .prizepot-profit p{
+        font-size: 1.5rem;
+    }
 }
