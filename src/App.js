@@ -6,6 +6,7 @@ import ComingSoon  from "./components/ComingSoon";
 import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TimerProvider } from "./context/TicketTimerContext";
+import Page404 from "./components/404";
 
 function App() {
 
@@ -35,11 +36,17 @@ function App() {
             <Route path="/whale">
               <TicketSection title="Whale" amount = {100} lotteryCategory = {2}/>
             </Route>
+
+            <Route path="/404">
+              <Page404 />
+            </Route>
           </TimerProvider>
 
           <Route path="/coming">
             <ComingSoon />
           </Route>
+
+          
         </Switch>
         <Footer></Footer>
     </div>

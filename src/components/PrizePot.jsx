@@ -1,6 +1,7 @@
 import React from 'react'
-import "../prizepot.css"
+import "../styles/prizepot.css"
 import RoundTickets from './RoundTickets';
+import WinningCategory from './WinningCategory';
 
 export default function PrizePot() {
     const [active, setActive] = React.useState(false);
@@ -39,23 +40,7 @@ export default function PrizePot() {
 
             <div className="prizes">
                 <div className={active ? "prizes-active": "prizes-hidden"}>
-                    <div className="winning-category">
-                        <div className="winner1">
-                            <p className="winner-head">Match first 1</p>
-                            <p className="winner-amount">500 cake</p>
-                            <small>~$4000</small>
-                        </div>
-                        <div className="winner2">
-                            <p className="winner-head">Match first 2</p>
-                            <p className="winner-amount">750 cake</p>
-                            <small>~$7211</small>
-                        </div>
-                        <div className="winner3">
-                            <p className="winner-head">Match first 3</p>
-                            <p className="winner-amount">1200 cake</p>
-                            <small>~$12000</small>
-                        </div>
-                    </div>
+                    <WinningCategory />
                 </div>
             </div>
             <div className="details-btn" onClick={handleActive}>

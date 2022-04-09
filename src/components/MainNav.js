@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import TranscHistory from "./TransactionHistory";
-import "../transactions.css"
+import "../styles/transactions.css"
 import { ConnectWallet, disconnectWallet } from "../api/metamask";
 
 

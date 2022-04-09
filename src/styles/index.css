@@ -672,6 +672,10 @@ form input{
 
     .main-footer .container{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
     }
     .main-footer div {
         margin-bottom: 2rem;

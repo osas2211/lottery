@@ -2,7 +2,7 @@ import { StyledModal } from "../StyledComponents/Modal.styled";
 import { useState } from "react";
 import reactDom from "react-dom";
 import { Link } from "react-router-dom"
-import "../switch.css"
+import "../styles/switch.css"
 
 export const OrderSummary = (props)=>{
   const handleModalHide = ()=>{
