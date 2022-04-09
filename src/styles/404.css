@@ -48,3 +48,10 @@
     height: 1px;
     background-color: rgba(177, 177, 177, 0.192);
 }
+
+@media (max-width: 900px) {
+    .page_404 .error{
+        padding: 4rem 2rem;
+        font-size: 2rem;
+    }
+}
